@@ -1,55 +1,83 @@
-# BadUSB Awareness - Digispark Demo
+# 🐚 Digispark BadUSB Awareness
 
-> **Atenção:** Este projeto é **apenas educativo**. Não use este script em computadores sem autorização.
-
-## Descrição
-Este repositório contém um **script educativo para Digispark** que demonstra como dispositivos USB programáveis podem ser usados para executar comandos automaticamente em um computador.  
-
-O objetivo é **conscientizar sobre os riscos de ataques BadUSB** e reforçar a importância da **segurança da informação** no ambiente de trabalho.
+Este repositório contém um **script educativo para Digispark**, criado para fins de conscientização e demonstração de riscos de BadUSB.
 
 ---
 
-## Funcionalidades do script
+## ⚠️ AVISO IMPORTANTE
 
-O script realiza as seguintes ações de forma automatizada:
+Este código **simula ataques BadUSB** e pode ser potencialmente perigoso se usado em sistemas sem autorização.
 
-1. 📝 Abre o **Bloco de Notas** e exibe uma **mensagem de alerta educativo** sobre BadUSB.
-2. 🌐 Abre o **navegador padrão** no site `www.google.com`.
-3. 💻 Abre o **Prompt de Comando** e executa `netsh wlan export profile key=clear` para demonstrar como perfis Wi-Fi podem ser acessados.
-4. 🔌 Executa o **desligamento imediato do computador** (`shutdown -s -t 0`).
-
-> Todas essas ações são feitas **automaticamente pelo Digispark**, simulando um teclado.
+> ❗ **Nunca utilize este script em computadores sem permissão explícita.**
+> Ele deve ser usado apenas para fins educativos e de conscientização.
 
 ---
 
-## Requisitos
+## 🔍 O que o código faz — Explicado passo a passo
 
-- Placa **Digispark** (ATtiny85)  
-- Computador Windows (para demonstrar o script)  
-- IDE Arduino com suporte ao Digispark
+O script demonstra como um Digispark pode automatizar comandos no Windows de forma silenciosa, simulando um teclado:
+
+### 1. Inicialização
+```c
+DigiKeyboard.sendKeyStroke(0);
+DigiKeyboard.delay(1500);
+```
+- Inicializa o teclado virtual do Digispark e aguarda reconhecimento pelo sistema.
+
+### 2. Abrir o Bloco de Notas e exibir mensagem de alerta
+```c
+DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+DigiKeyboard.print("notepad");
+```
+- Abre o Bloco de Notas e escreve uma **mensagem educativa**, alertando sobre riscos de BadUSB.
+
+### 3. Abrir navegador
+```c
+DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+DigiKeyboard.print("www.google.com");
+```
+- Abre o navegador padrão e acessa o Google.
+
+### 4. Abrir CMD e exportar perfis Wi-Fi
+```c
+DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+DigiKeyboard.print("cmd");
+DigiKeyboard.print("netsh wlan export profile key=clear");
+```
+- Mostra como um atacante poderia acessar **senhas de redes Wi-Fi** (para fins educativos).
+
+### 5. Desligamento do computador
+```c
+DigiKeyboard.print("shutdown -s -t 0");
+```
+- Executa **desligamento imediato**, demonstrando controle remoto total via USB.
 
 ---
 
-## Uso
+## ✅ Exemplos de uso educativo
 
-1. Conecte o Digispark ao computador.
-2. O script será executado automaticamente, mostrando os efeitos descritos.
-3. Observe as ações para **entender como ataques BadUSB podem ocorrer**.
-
-> ⚠️ **Nunca use este script em computadores sem autorização.** Ele serve apenas para fins educacionais e de conscientização.
+- Treinamentos internos de segurança da informação.
+- Demonstração de riscos de BadUSB para equipes.
+- Estudos de conscientização e prevenção de ataques.
 
 ---
 
-## Contribuição
+## 🛡️ Proteção recomendada
 
-Contribuições são bem-vindas! Você pode:
-- 💡 Sugerir melhorias no README
-- 🛠 Criar scripts educativos adicionais de conscientização
-- 🐛 Reportar bugs ou problemas na execução do Digispark
+- Nunca conecte dispositivos USB desconhecidos.
+- Monitore e restrinja o uso de dispositivos programáveis na empresa.
+- Eduque colaboradores sobre engenharia social e ataques USB.
 
 ---
 
-## Licença
+## 🧑‍💻 Autor
 
-Este projeto é **educativo e aberto**, use de forma ética e responsável.
+- [Jadson Lima](#)  
+> Projeto educativo e de conscientização.
+
+---
+
+## 📄 Licença
+
+Distribuído sob a [GNU GPL v3](https://www.gnu.org/licenses/old-licenses/gpl-3.0.html).
 
