@@ -72,7 +72,8 @@ DigiKeyboard.print("shutdown -s -t 0");
 
 ## 🧑‍💻 Autor
 
-- [Jadson Lima](#)  
+- [h4ckthreat](https://github.com/h4ckthreat)
+  
 > Projeto educativo e de conscientização.
 
 ---
